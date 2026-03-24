@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:14.1
+    container_name: outlinr-postgres
+    environment:
+      POSTGRES_USER: outlinr
+      POSTGRES_PASSWORD: outlinr
+      POSTGRES_DB: outlinr
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - outlinr_network
+
+volumes:
+  postgres_data:
+
+networks:
+  outlinr_network:
+    name: outlinr_network
+    driver: bridge
