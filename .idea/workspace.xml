@@ -4,18 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898f01e-064a-48a6-a63e-c975419ae37e" name="Changes" comment="feat: implemented react-router-dom for page routing">
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/badge.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/feature-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/section-heading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/stat-block.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/common/step-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/sections/escrow-status-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/sections/hero-section.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/sections/logo-strip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/sections/steps-section.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6898f01e-064a-48a6-a63e-c975419ae37e" name="Changes" comment="feat: update and refactor common web components">
+      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lint_output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/authn-image.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/outlinr.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/app.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/admin-gate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/auth-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/delete-escrow-modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/detail-panel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/icons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/kyc-prompt.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/protected-route.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/stat-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/common/status-badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/layout/app-layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hooks/use-interswitch-inline.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/account-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/admin-dispute-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/create-escrow-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/dashboard-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/dispute-tracking-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/escrow-dashboard-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/escrow-workspace-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/kyc-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/login-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/register-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/seller-accept-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/setup-account-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/verify-payment-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/routes/app-router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/api-client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/auth-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/dispute-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/escrow-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/identity-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/auth-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/escrow-wizard-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/types/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/utils/escrow-defaults.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/utils/format.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +115,7 @@
     "git-widget-placeholder": "Hilary",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hilary.onianwa/Downloads/outlinr/web",
+    "last_opened_file_path": "C:/Users/hilary.onianwa/Downloads/outlinr/app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,11 +129,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\app" />
       <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web" />
       <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\components\common" />
       <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\components\sections" />
       <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\types" />
-      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\routes" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +194,7 @@
       <workItem from="1774344568911" duration="35000" />
       <workItem from="1774344625014" duration="83000" />
       <workItem from="1774344729038" duration="270000" />
-      <workItem from="1774390531388" duration="1302000" />
+      <workItem from="1774390531388" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="feat(create web app)">
       <option name="closed" value="true" />
@@ -182,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774392394180</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: update and refactor common web components">
+      <option name="closed" value="true" />
+      <created>1774393009080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774393009080</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +266,7 @@
     <MESSAGE value="feat: added enyata and interswitch logo" />
     <MESSAGE value="feat: created the landing page, coming soon page, not-found-page" />
     <MESSAGE value="feat: implemented react-router-dom for page routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented react-router-dom for page routing" />
+    <MESSAGE value="feat: update and refactor common web components" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update and refactor common web components" />
   </component>
 </project>

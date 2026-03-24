@@ -1,0 +1,402 @@
+
+> app@0.0.0 lint /Users/user/Projects/crud/app
+> eslint .
+
+
+/Users/user/Projects/crud/app/src/components/common/detail-panel.tsx
+  18:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/user/Projects/crud/app/src/components/common/status-badge.tsx
+  33:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/user/Projects/crud/app/src/components/layout/app-layout.tsx
+  30:6  warning  React Hook useEffect has a missing dependency: 'onClose'. Either include it or remove the dependency array. If 'onClose' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+
+/Users/user/Projects/crud/app/src/hooks/use-interswitch-inline.ts
+  45:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx
+    87:59  error  React Hook "useInterswitchInline" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/rules-of-hooks
+    97:3   error  React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               react-hooks/rules-of-hooks
+  1004:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1004:10
+  1002 |
+  1003 |       <div className="rounded-[1.5rem] border-2 border-gray-100 bg-white shadow-sm divide-y-2 divide-gray-50 overflow-hidden">
+> 1004 |         <ReviewLine label="Title" value={store.title} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1005 |         <ReviewLine label="Amount" value={formatCurrency(amount, store.currency)} step={2} />
+  1006 |         <ReviewLine label={`Escrow fee (${ESCROW_DEFAULTS.FEE_PERCENT}%)`} value={formatCurrency(amount * ESCROW_DEFAULTS.FEE_PERCENT / 100, store.currency)} step={2} />
+  1007 |         <div className="flex justify-between items-center px-5 py-4 bg-gray-50/50">
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                         react-hooks/static-components
+  1005:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1005:10
+  1003 |       <div className="rounded-[1.5rem] border-2 border-gray-100 bg-white shadow-sm divide-y-2 divide-gray-50 overflow-hidden">
+  1004 |         <ReviewLine label="Title" value={store.title} step={2} />
+> 1005 |         <ReviewLine label="Amount" value={formatCurrency(amount, store.currency)} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1006 |         <ReviewLine label={`Escrow fee (${ESCROW_DEFAULTS.FEE_PERCENT}%)`} value={formatCurrency(amount * ESCROW_DEFAULTS.FEE_PERCENT / 100, store.currency)} step={2} />
+  1007 |         <div className="flex justify-between items-center px-5 py-4 bg-gray-50/50">
+  1008 |           <span className="text-sm font-extrabold text-gray-700 uppercase tracking-widest">Total due from buyer</span>
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                  react-hooks/static-components
+  1006:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1006:10
+  1004 |         <ReviewLine label="Title" value={store.title} step={2} />
+  1005 |         <ReviewLine label="Amount" value={formatCurrency(amount, store.currency)} step={2} />
+> 1006 |         <ReviewLine label={`Escrow fee (${ESCROW_DEFAULTS.FEE_PERCENT}%)`} value={formatCurrency(amount * ESCROW_DEFAULTS.FEE_PERCENT / 100, store.currency)} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1007 |         <div className="flex justify-between items-center px-5 py-4 bg-gray-50/50">
+  1008 |           <span className="text-sm font-extrabold text-gray-700 uppercase tracking-widest">Total due from buyer</span>
+  1009 |           <span className="text-base font-extrabold text-primary-600 tracking-tight">{formatCurrency(amount * (1 + ESCROW_DEFAULTS.FEE_PERCENT / 100), store.currency)}</span>
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">  react-hooks/static-components
+  1011:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1011:10
+  1009 |           <span className="text-base font-extrabold text-primary-600 tracking-tight">{formatCurrency(amount * (1 + ESCROW_DEFAULTS.FEE_PERCENT / 100), store.currency)}</span>
+  1010 |         </div>
+> 1011 |         <ReviewLine label="Currency" value={store.currency} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1012 |         <ReviewLine label="Your role" value={store.participationMode ? roleLabels[store.participationMode] : "—"} step={0} />
+  1013 |         {store.participationMode === "AGENT" ? (
+  1014 |           <>
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                    react-hooks/static-components
+  1012:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1012:10
+  1010 |         </div>
+  1011 |         <ReviewLine label="Currency" value={store.currency} step={2} />
+> 1012 |         <ReviewLine label="Your role" value={store.participationMode ? roleLabels[store.participationMode] : "—"} step={0} />
+       |          ^^^^^^^^^^ This component is created during render
+  1013 |         {store.participationMode === "AGENT" ? (
+  1014 |           <>
+  1015 |             <ReviewLine label="Buyer" value={store.buyerEmail || "—"} step={1} />
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                                                                 react-hooks/static-components
+  1015:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1015:14
+  1013 |         {store.participationMode === "AGENT" ? (
+  1014 |           <>
+> 1015 |             <ReviewLine label="Buyer" value={store.buyerEmail || "—"} step={1} />
+       |              ^^^^^^^^^^ This component is created during render
+  1016 |             <ReviewLine label="Seller" value={store.sellerEmail || "—"} step={1} />
+  1017 |           </>
+  1018 |         ) : (
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/static-components
+  1016:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1016:14
+  1014 |           <>
+  1015 |             <ReviewLine label="Buyer" value={store.buyerEmail || "—"} step={1} />
+> 1016 |             <ReviewLine label="Seller" value={store.sellerEmail || "—"} step={1} />
+       |              ^^^^^^^^^^ This component is created during render
+  1017 |           </>
+  1018 |         ) : (
+  1019 |           <ReviewLine
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react-hooks/static-components
+  1019:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1019:12
+  1017 |           </>
+  1018 |         ) : (
+> 1019 |           <ReviewLine
+       |            ^^^^^^^^^^ This component is created during render
+  1020 |             label={store.participationMode === "SELF_AS_BUYER" ? "Seller" : "Buyer"}
+  1021 |             value={`${store.counterpartyEmail}${store.counterpartyName ? ` (${store.counterpartyName})` : ""}`}
+  1022 |             step={1}
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/static-components
+  1025:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1025:10
+  1023 |           />
+  1024 |         )}
+> 1025 |         <ReviewLine label="Delivery type" value={store.deliveryType ? deliveryLabels[store.deliveryType] : "—"} step={3} />
+       |          ^^^^^^^^^^ This component is created during render
+  1026 |         <ReviewLine label="Inspection period" value={`${store.inspectionPeriodDays} day${store.inspectionPeriodDays > 1 ? "s" : ""}`} step={2} />
+  1027 |         <ReviewLine label="Auto-release" value={store.autoRelease ? "Yes" : "No"} step={2} />
+  1028 |       </div>
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                     react-hooks/static-components
+  1026:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1026:10
+  1024 |         )}
+  1025 |         <ReviewLine label="Delivery type" value={store.deliveryType ? deliveryLabels[store.deliveryType] : "—"} step={3} />
+> 1026 |         <ReviewLine label="Inspection period" value={`${store.inspectionPeriodDays} day${store.inspectionPeriodDays > 1 ? "s" : ""}`} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1027 |         <ReviewLine label="Auto-release" value={store.autoRelease ? "Yes" : "No"} step={2} />
+  1028 |       </div>
+  1029 |
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                                  react-hooks/static-components
+  1027:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:1027:10
+  1025 |         <ReviewLine label="Delivery type" value={store.deliveryType ? deliveryLabels[store.deliveryType] : "—"} step={3} />
+  1026 |         <ReviewLine label="Inspection period" value={`${store.inspectionPeriodDays} day${store.inspectionPeriodDays > 1 ? "s" : ""}`} step={2} />
+> 1027 |         <ReviewLine label="Auto-release" value={store.autoRelease ? "Yes" : "No"} step={2} />
+       |          ^^^^^^^^^^ This component is created during render
+  1028 |       </div>
+  1029 |
+  1030 |       {/* Terms Checkbox */}
+
+/Users/user/Projects/crud/app/src/pages/create-escrow-page.tsx:972:3
+  970 |   };
+  971 |
+> 972 |   function ReviewLine({
+      |   ^^^^^^^^^^^^^^^^^^^^^
+> 973 |     label,
+      | ^^^^^^^^^^
+> 974 |     value,
+      …
+      | ^^^^^^^^^^
+> 989 |     );
+      | ^^^^^^^^^^
+> 990 |   }
+      | ^^^^ The component is created during render here
+  991 |
+  992 |   return (
+  993 |     <div className="space-y-8 animate-fade-in">                                                                                                                                                                                                                                                                                                                react-hooks/static-components
+
+/Users/user/Projects/crud/app/src/pages/dashboard-page.tsx
+  195:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/pages/dispute-tracking-page.tsx
+  33:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/pages/escrow-dashboard-page.tsx
+  50:8   warning  React Hook useEffect has a missing dependency: 'navigate'. Either include it or remove the dependency array                                                                                     react-hooks/exhaustive-deps
+  76:25  error    React Hook "useAuthStore" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+/Users/user/Projects/crud/app/src/pages/escrow-workspace-page.tsx
+  667:46  error  '_userEmail' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/user/Projects/crud/app/src/pages/login-page.tsx
+  20:29  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  21:35  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  22:43  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+
+/Users/user/Projects/crud/app/src/pages/register-page.tsx
+  20:37  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  21:35  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  22:29  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  23:35  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  24:49  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  25:43  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  26:57  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  27:49  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+
+/Users/user/Projects/crud/app/src/pages/verify-payment-page.tsx
+  37:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/services/api-client.ts
+  62:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  65:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  80:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  84:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/services/escrow-service.ts
+  60:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  61:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/user/Projects/crud/app/src/store/auth-store.ts
+  29:66  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  35:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  67:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 45 problems (43 errors, 2 warnings)
+
+ ELIFECYCLE  Command failed with exit code 1.

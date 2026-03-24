@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+    /* ── Primary ── */
+    --color-primary-50: #eaedfe;
+    --color-primary-100: #d0d8fd;
+    --color-primary-200: #a1b0fb;
+    --color-primary-400: #5070f7;
+    --color-primary-500: #254BF5;
+    --color-primary-600: #1e3dc4;
+    --color-primary-700: #172f98;
+
+    /* ── Surfaces ── */
+    --color-surface-1: #f3f4f6;
+    --color-surface-2: #e8ecf8;
+    --color-surface-dark: #1e293b;
+
+    /* ── Shadows ── */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover:
+        0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-float:
+        0 10px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-elevated:
+        0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    /* ── Font ── */
+    --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+    --font-garamond: "EB Garamond", Georgia, serif;
+}
+
+/* ── Base resets ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
