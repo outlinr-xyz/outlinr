@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898f01e-064a-48a6-a63e-c975419ae37e" name="Changes" comment="feat: implemented the navbar and the site-footer of the web application">
-      <change afterPath="$PROJECT_DIR$/web/src/components/layout/nav-bar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/layout/site-footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/coming-soon-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/design-system.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/landing-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/not-found-page.tsx" afterDir="false" />
+    <list default="true" id="6898f01e-064a-48a6-a63e-c975419ae37e" name="Changes" comment="feat: implemented react-router-dom for page routing">
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/feature-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/section-heading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/stat-block.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/common/step-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/sections/escrow-status-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/sections/hero-section.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/sections/logo-strip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/sections/steps-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
     "git-widget-placeholder": "Hilary",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hilary.onianwa/Downloads/outlinr/web/src/pages",
+    "last_opened_file_path": "C:/Users/hilary.onianwa/Downloads/outlinr/web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,8 +83,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\assets" />
-      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\public" />
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web" />
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\components\common" />
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\components\sections" />
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\types" />
+      <recent name="C:\Users\hilary.onianwa\Downloads\outlinr\web\src\routes" />
     </key>
   </component>
   <component name="RunManager">
@@ -140,7 +148,7 @@
       <workItem from="1774344568911" duration="35000" />
       <workItem from="1774344625014" duration="83000" />
       <workItem from="1774344729038" duration="270000" />
-      <workItem from="1774390531388" duration="740000" />
+      <workItem from="1774390531388" duration="1302000" />
     </task>
     <task id="LOCAL-00001" summary="feat(create web app)">
       <option name="closed" value="true" />
@@ -158,11 +166,35 @@
       <option name="project" value="LOCAL" />
       <updated>1774343707296</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: created the landing page, coming soon page, not-found-page">
+      <option name="closed" value="true" />
+      <created>1774392123599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774392123599</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: implemented react-router-dom for page routing">
+      <option name="closed" value="true" />
+      <created>1774392394180</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774392394180</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/web/node_modules/@eslint/plugin-kit/dist/esm/types.d.ts" />
+        <option value="$PROJECT_DIR$/web/node_modules/@eslint/config-array/dist/esm/types.d.ts" />
+        <option value="$PROJECT_DIR$/web/node_modules/@eslint/object-schema/dist/esm/types.d.ts" />
+        <option value="$PROJECT_DIR$/web/node_modules/@eslint/config-helpers/dist/esm/types.d.ts" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -178,6 +210,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(create web app)" />
     <MESSAGE value="feat: added enyata and interswitch logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added enyata and interswitch logo" />
+    <MESSAGE value="feat: created the landing page, coming soon page, not-found-page" />
+    <MESSAGE value="feat: implemented react-router-dom for page routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented react-router-dom for page routing" />
   </component>
 </project>
