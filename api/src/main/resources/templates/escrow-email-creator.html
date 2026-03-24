@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Escrow Created Successfully</title>
+    <style>
+        body { font-family: 'Geist', system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1e293b; margin: 0; padding: 0; background-color: #f3f4f6; }
+        .wrapper { padding: 40px 15px; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+        .header { background-color: #1e293b; padding: 40px 24px; text-align: center; }
+        .header h2 { font-family: 'Clash Display', sans-serif; color: #fff; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+        .header p { color: #a1b0fb; margin: 8px 0 0; font-size: 14px; }
+        .body { padding: 36px 32px; }
+        .success-banner { display: flex; align-items: center; background-color: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-bottom: 24px; }
+        .success-banner span { font-size: 14px; color: #166534; font-weight: 600; }
+        .details { background-color: #f3f4f6; border-left: 4px solid #254BF5; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .details h3 { font-family: 'Clash Display', sans-serif; margin: 0 0 16px; font-size: 16px; color: #1e293b; }
+        .details p { margin: 8px 0; font-size: 14px; color: #475569; }
+        .details strong { color: #1e293b; }
+        .cta-block { text-align: center; margin: 36px 0 16px; }
+        .btn { display: inline-block; padding: 16px 36px; background-color: #254BF5; color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px; letter-spacing: 0.3px; transition: background-color 0.2s; }
+        .btn:hover { background-color: #1e3dc4; }
+        .notice { padding: 14px 20px; background-color: #fffbeb; color: #92400e; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; margin-top: 24px; font-size: 13px; line-height: 1.5; }
+        .footer { text-align: center; padding: 24px; background-color: #f8f9fa; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b; }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="header">
+            <h2>Escrow Created Successfully</h2>
+            <p>Your transaction is live and waiting for counterparty confirmation</p>
+        </div>
+        <div class="body">
+            <div class="success-banner">
+                <span>&#10003;&nbsp; Escrow created — invitation(s) sent to all participants.</span>
+            </div>
+
+            <p>Hello <strong th:text="${creatorName}"></strong>,</p>
+
+            <p>Your escrow transaction has been created. We've sent invitation emails to the other participant(s) so they can confirm their involvement.</p>
+
+            <div class="details">
+                <h3>Transaction Details</h3>
+                <p><strong>Title:</strong> <span th:text="${escrowTitle}"></span></p>
+                <p><strong>Transaction ID:</strong> <span th:text="${transactionId}"></span></p>
+                <p><strong>Amount:</strong> &#8358;<span th:text="${amount}"></span></p>
+                <p><strong>Status:</strong> <span th:text="${status}"></span></p>
+            </div>
+
+            <div class="cta-block">
+                <a th:href="${viewLink}" class="btn">View Transaction</a>
+            </div>
+
+            <div class="notice">
+                <strong>Next step:</strong> <span th:text="${nextStepMessage}">The other party will receive an invitation email to accept and join the escrow.</span>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Thank you,<br><strong>Outlinr Escrow Team</strong></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

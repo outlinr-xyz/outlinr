@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: api # Static
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/outlinr}
+    username: ${DB_USER:user}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver # Static
+  jpa:
+    hibernate:
+      ddl-auto: update # Static
+    show-sql: true # Static
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect # Static
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml # Static
+    enabled: false # Static
+
+mail:
+  resend:
+    api-key: ${RESEND_API_KEY:re_AEPuLTjG_L7fHbKGyV5UuSDiaTyPHTYEq}
+    from: admin@app.outlinr.xyz # Static
+
+app:
+  frontend:
+    url: ${FRONTEND_URL:http://localhost:5173}
+  jwt:
+    secret: ${JWT_SECRET:dGhpc0lzQVZlcnlMb25nU2VjcmV0S2V5Rm9yRGV2ZWxvcG1lbnRPbmx5UGxlYXNlQ2hhbmdlSW5Qcm9K}
+    access-expiration: 600000 # Static
+    refresh-expiration: 604800000 # Static
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:5174,https://outlinr.xyz,https://app.outlinr.xyz}
+  cookie:
+    secure: false # Static
+
+interswitch:
+  payment:
+    merchant-id: ${INTERSWITCH_MERCHANT_ID:MX178444}
+    pay-item-id: ${INTERSWITCH_PAY_ITEM_ID:Default_Payable_MX178444}
+    mac-key: ${INTERSWITCH_MAC_KEY:D3D1D05AFE42AD50818167EAC73C109168A0F108F32645C8B59E897FA930DA44F9230910DAC9E20641823799A107A02068F7BC0F4CC41D2952E249552255710F}
+    verify-url: https://qa.interswitchng.com/collections/api/v1/gettransaction.json # Static Sandbox URL
+  identity:
+    client-id: ${INTERSWITCH_CLIENT_ID:IKIAB2D621056FB8E9D00B18B312EC7A467B7CA6C981}
+    client-secret: ${INTERSWITCH_CLIENT_SECRET:jnH9Ii7Y7SlWuYT}
+    oauth-url: https://sandbox.interswitchng.com/passport/oauth/token # Static Sandbox URL
+    bvn-url: https://sandbox.interswitchng.com/passport/api/v1/bvn # Static Sandbox URL
+    nin-url: https://sandbox.interswitchng.com/passport/api/v1/nin # Static Sandbox URL
+  transfer:
+    client-id: ${INTERSWITCH_CLIENT_ID:IKIAB2D621056FB8E9D00B18B312EC7A467B7CA6C981}
+    client-secret: ${INTERSWITCH_CLIENT_SECRET:jnH9Ii7Y7SlWuYT}
+    name-enquiry-url: https://sandbox.interswitchng.com/api/v2/nameenquiry/banks/validate # Static Sandbox URL
+    transfer-url: https://sandbox.interswitchng.com/api/v2/quickteller/sendMoney # Static Sandbox URL

@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  api:
+    build: ../api
+    container_name: outlinr-api
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_ACCESS_EXPIRATION: ${JWT_ACCESS_EXPIRATION}
+      JWT_REFRESH_EXPIRATION: ${JWT_REFRESH_EXPIRATION}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      MAIL_FROM: ${MAIL_FROM:-admin@app.outlinr.xyz}
+      INTERSWITCH_MERCHANT_ID: ${INTERSWITCH_MERCHANT_ID}
+      INTERSWITCH_PAY_ITEM_ID: ${INTERSWITCH_PAY_ITEM_ID}
+      INTERSWITCH_MAC_KEY: ${INTERSWITCH_MAC_KEY}
+      INTERSWITCH_INIT_URL: ${INTERSWITCH_INIT_URL}
+      INTERSWITCH_VERIFY_URL: ${INTERSWITCH_VERIFY_URL}
+      CORS_ORIGINS: ${CORS_ORIGINS:-https://app.outlinr.xyz,https://outlinr.xyz}
+      JAVA_OPTS: "-Xms256m -Xmx256m"
+    restart: unless-stopped
+    networks:
+      - outlinr_network
+
+  app:
+    build:
+      context: ../app
+      args:
+        VITE_APP_URL: ${VITE_APP_URL}
+        VITE_API_URL: ${VITE_API_URL}
+    container_name: outlinr-app
+    ports:
+      - "127.0.0.1:3000:80"
+    restart: unless-stopped
+    networks:
+      - outlinr_network
+
+  web:
+    build:
+      context: ../web
+      args:
+        VITE_APP_URL: ${VITE_APP_URL}
+        VITE_API_URL: ${VITE_API_URL}
+    container_name: outlinr-web
+    ports:
+      - "127.0.0.1:3001:80"
+    restart: unless-stopped
+    networks:
+      - outlinr_network
+
+networks:
+  outlinr_network:
+    driver: bridge

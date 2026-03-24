@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Escrow Transaction</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .header { background-color: #f4f4f4; padding: 10px; text-align: center; border-bottom: 2px solid #0056b3; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 10px 20px; background-color: #28a745; color: white !important; text-decoration: none; border-radius: 5px; margin-top: 20px; font-weight: bold; font-size: 16px;}
+        .details { background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 20px;}
+        .details p { margin: 5px 0;}
+        .footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #777;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>New Escrow Transaction</h2>
+    </div>
+
+    <p>Hello <strong th:text="${recipientName}"></strong>,</p>
+
+    <p>A new escrow transaction has been created by buyer <strong th:text="${otherPartyName}"> </strong>.</p>
+
+    <div class="details">
+        <h3>Transaction Details</h3>
+        <p><strong>Transaction ID:</strong> <span th:text="${transactionId}">123</span></p>
+        <p><strong>Amount:</strong> $<span th:text="${amount}">100.00</span></p>
+        <p><strong>Status:</strong> <span th:text="${status}">CREATED</span></p>
+    </div>
+
+    <p>Please click the button below to accept the escrow and onboard to our platform:</p>
+
+    <div style="text-align: center;">
+        <a th:href="${acceptanceLink}" class="btn">Accept Escrow Transaction</a>
+    </div>
+
+    <div class="footer">
+        <p>Thank you,<br>Escrow Service Team</p>
+    </div>
+</div>
+</body>
+</html>
