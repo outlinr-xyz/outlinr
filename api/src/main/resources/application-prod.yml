@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: api
+  datasource:
+    url: jdbc:postgresql://outlinr-bakaredavid007-2598.d.aivencloud.com:11165/defaultdb?sslmode=require
+    username: avnadmin
+    password: AVNS_QTI58_I6mzjMLiyKKEy
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: false
+
+mail:
+  resend:
+    api-key: re_AEPuLTjG_L7fHbKGyV5UuSDiaTyPHTYEq
+    from: admin@app.outlinr.xyz
+
+app:
+  frontend:
+    url: https://app.outlinr.xyz
+  jwt:
+    secret: dGhpc0lzQVZlcnlMb25nU2VjcmV0S2V5Rm9yRGV2ZWxvcG1lbnRPbmx5UGxlYXNlQ2hhbmdlSW5Qcm9K
+    access-expiration: 600000
+    refresh-expiration: 604800000
+  cors:
+    allowed-origins: https://app.outlinr.xyz
+  cookie:
+    secure: true
+
+interswitch:
+  payment:
+    merchant-id: MX271585
+    pay-item-id: Default_Payable_MX271585
+    mac-key: D3D1D05AFE42AD50818167EAC73C109168A0F108F32645C8B59E897FA930DA44F9230910DAC9E20641823799A107A02068F7BC0F4CC41D2952E249552255710F
+    verify-url: https://qa.interswitchng.com/collections/api/v1/gettransaction.json
+  identity:
+    client-id: IKIAB2D621056FB8E9D00B18B312EC7A467B7CA6C981
+    client-secret: jnH9Ii7Y7SlWuYT
+    oauth-url: https://sandbox.interswitchng.com/passport/oauth/token
+    bvn-url: https://sandbox.interswitchng.com/passport/api/v1/bvn
+    nin-url: https://sandbox.interswitchng.com/passport/api/v1/nin
+  transfer:
+    client-id: IKIAB2D621056FB8E9D00B18B312EC7A467B7CA6C981
+    client-secret: jnH9Ii7Y7SlWuYT
+    name-enquiry-url: https://sandbox.interswitchng.com/api/v2/nameenquiry/banks/validate
+    transfer-url: https://sandbox.interswitchng.com/api/v2/quickteller/sendMoney
