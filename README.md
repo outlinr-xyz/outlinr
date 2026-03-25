@@ -9,6 +9,7 @@ Coupled with a modern user interface, users can easily navigate their transactio
 
 ### ✨ Key Features
 - **Secure Escrow Management:** Dedicated flows for Buyers, Sellers, and Agents to create, manage, and finalize escrow agreements.
+- **Kyc Compliance & Fraud Prevention:** Real-time identity verification integrated directly into the platform. Powered by BVN and NIN APIs from the Interswitch API Marketplace, ensuring instant data validation and secure onboarding.
 - **Role-based Email System:** Automated, accessible email invitations and confirmations via Resend for all parties involved in a transaction.
 - **Interswitch Payments Integrated:** Secure, cardless, and cross-border payment processing powered by Interswitch APIs.
 - **Responsive Modern UI:** Built with React 19 and Tailwind CSS v4 to ensure a pristine user experience across all devices.
