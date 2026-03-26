@@ -2,12 +2,23 @@
 
 Outlinr is a modern, secure platform offering comprehensive **Escrow Services** to facilitate trust and seamless communication between buyers, sellers, and agents. Built with a robust Spring Boot backend and a highly responsive React frontend, Outlinr integrates native payment processing via Interswitch and automated email flows via Resend.
 
+## Webcheckout Test Credentials
+Card Number: 5061040000000000306
+Expiry Date: Any future date (e.g., 12/27)
+CVV: 123
+PIN: 1234
+OTP (If prompted): 12345 or 123456
+
+## Contribution:
+Hilary Onianwa: Frontend
+David Bakare: Backend
+
 ## 🚀 About the Project
 
 Outlinr is designed to bridge the gap of trust in online transactions. By acting as a secure intermediary, our Escrow system ensures that funds are only released when both parties are satisfied. 
 Coupled with a modern user interface, users can easily navigate their transactions, get instant support, and manage their escrow agreements efficiently.
 
-### ✨ Key Features
+### Key Features
 - **Secure Escrow Management:** Dedicated flows for Buyers, Sellers, and Agents to create, manage, and finalize escrow agreements.
 - **Kyc Compliance & Fraud Prevention:** Real-time identity verification integrated directly into the platform. Powered by BVN and NIN APIs from the **Interswitch API Marketplace**, ensuring instant data validation and secure onboarding.
 - **Role-based Email System:** Automated, accessible email invitations and confirmations via Resend for all parties involved in a transaction.
@@ -16,7 +27,7 @@ Coupled with a modern user interface, users can easily navigate their transactio
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend (`/app`)**
 - React 19 & TypeScript
@@ -26,7 +37,7 @@ Coupled with a modern user interface, users can easily navigate their transactio
 - React Router (Navigation)
 - React Icons
 
-**Backend (`/api`)**
+**Backend (`/api/v1`)**
 - Java 17 & Spring Boot 3
 - Spring Security & JWT (Authentication)
 - PostgreSQL & Liquibase (Database & Migrations)
@@ -34,7 +45,7 @@ Coupled with a modern user interface, users can easily navigate their transactio
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Docker](https://www.docker.com/) & Docker Compose
@@ -83,7 +94,7 @@ npm run dev
 
 ---
 
-## 🤝 Contribution Guidelines
+## Contribution Guidelines
 When making changes, please ensure:
 1. **Frontend:** Run `pnpm lint` and ensure type-safety. Keep the UI fully responsive.
 2. **Backend:** Ensure the database schema matches JPA models and that you handle `@Transactional` contexts correctly.
