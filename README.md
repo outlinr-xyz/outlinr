@@ -2,12 +2,23 @@
 
 Outlinr is a modern, secure platform offering comprehensive **Escrow Services** to facilitate trust and seamless communication between buyers, sellers, and agents. Built with a robust Spring Boot backend and a highly responsive React frontend, Outlinr integrates native payment processing via Interswitch and automated email flows via Resend.
 
-## Webcheckout Test Credentials
+## Test Credentials
+#### Web Checkout
+```
 Card Number: 5061040000000000306
 Expiry Date: Any future date (e.g., 12/27)
 CVV: 123
 PIN: 1234
-OTP (If prompted): 12345 or 123456
+OTP: 123456
+```
+#### BVN
+22222222222 (preferred)
+
+#### NIN
+12345678901
+
+#### Bank Account
+1234567890 (GTB)
 
 ## Contribution:
 Hilary Onianwa: Frontend
